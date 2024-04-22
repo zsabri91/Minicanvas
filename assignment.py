@@ -13,3 +13,4 @@ class Submission:
         self.submission = content
         self.student_id = student_id
         self.grade = -1.0 # None
+
