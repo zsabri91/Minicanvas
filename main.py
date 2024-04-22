@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from typing import List
 from course import CourseManager, Course
-from user import UserManager
+from user import UserManager, User
 from fastapi.security import APIKeyHeader
 
 coursemanager = CourseManager()
@@ -21,7 +21,7 @@ def create_a_course(coursecode: str,
                     semester: str, 
                     teacher_id_list: List[int]) -> int:
     ### an admin should create a course
-    teacher_list = usermanager.find_users(teacher_id_list)
+    teacher_list = [1]
     course_id = coursemanager.create_a_course(coursecode, semester, teacher_list)
     
     course = coursemanager.find_a_course(course_id)
