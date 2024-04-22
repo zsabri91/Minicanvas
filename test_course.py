@@ -41,12 +41,14 @@ def test_course_import_students(course):
 
 # COURSE - def create_an_assignment(self, due_date):
 def test_course_create_an_assignment(course, mocker):
-    mock_assignment = Mock()
-    mocker.patch.object(course, 'create_an_assignment', return_value=mock_assignment)
-    assignment = course.create_an_assignment("2024-12-01")
-    assert assignment == mock_assignment
+    course.create_an_assignment("2024-12-01")
+    assert course.assignment_list[-1].due_date == "2024-12-01"
 
 # COURSE - def generate_assignment_id(self):
 def test_course_generate_assignment_id(course):
     assert course.generate_assignment_id() == 1
     assert course.generate_assignment_id() == 2
+
+# COURSE - def __str(self):
+def test_course_str(course):
+    assert str(course)== "ID: 1, code: COSC341, teachers: ['Nate Halash']. students: []"
