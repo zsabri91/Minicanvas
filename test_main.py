@@ -30,7 +30,7 @@ def test_welcome(client):
 # Test the create_a_course endpoint
 def test_create_a_course(client):
     # Create a Course object
-    course = Course(1, "CS101", "Fall 2024", [1, 2, 3])
+    course = Course(1, "CS314", "Fall 2022", [1, 2, 3])
     # Add the Course to course_list
     coursemanager.course_list.append(course)
     response = client.post("/courses/1?semester=Fall 2024",  json=[1])
