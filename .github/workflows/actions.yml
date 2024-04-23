@@ -17,6 +17,6 @@ jobs:
             - name: install requirements
               working-directory: ./
               run: pip install -r requirements.txt
-            - name: test miniCanvas
+            - name: test Minicanvas
               working-directory: ./
               run: pytest --cov
