@@ -11,7 +11,7 @@ def course_manager():
 # Define a fixture for the Course
 @pytest.fixture
 def course():
-    return Course(1, "COSC341", "Winter 2024", ["Nate Halash"])
+    return Course(1, "COSC341", "Winter 2024", ["Ziad Sabri"])
 
 # COURSE_MANAGER - def generate_id(self):
 def test_course_manager_generate_id(course_manager):
@@ -22,7 +22,7 @@ def test_course_manager_generate_id(course_manager):
 def test_course_manager_create_a_course(course_manager, mocker):
     mock_course = Mock()
     mocker.patch.object(course_manager, 'create_a_course', return_value=mock_course)
-    course_id = course_manager.create_a_course("COSC341", "Winter 2024", ["Nate Halash"])
+    course_id = course_manager.create_a_course("COSC341", "Winter 2024", ["Ziad Sabri"])
     assert course_id == mock_course
 
 # COURSE_MANAGER - def find_a_course(self, id):
@@ -51,4 +51,4 @@ def test_course_generate_assignment_id(course):
 
 # COURSE - def __str(self):
 def test_course_str(course):
-    assert str(course)== "ID: 1, code: COSC341, teachers: ['Nate Halash']. students: []"
+    assert str(course)== "ID: 1, code: COSC341, teachers: ['Ziad Sabri']. students: []"

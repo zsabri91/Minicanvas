@@ -15,19 +15,19 @@ def test_generate_id(user_manager):
 
 # USER_MANAGER - def create_a_user(self, name, password, type):
 def test_create_a_user(user_manager):
-    user_manager.create_a_user("John Doe", "password123", "student")
+    user_manager.create_a_user("Moh Khaldoun", "password123", "student")
     assert len(user_manager.user_list) == 1
-    assert user_manager.user_list[0].name == "John Doe"
+    assert user_manager.user_list[0].name == "Moh Khaldoun"
     assert user_manager.user_list[0].password == "password123"
     assert user_manager.user_list[0].type == "student"
 
 # USER_MANAGER - def find_users(self, ids):
 def test_find_users(user_manager):
-    user_manager.create_a_user("John Doe", "password123", "student")
-    user_manager.create_a_user("Jane Doe", "password456", "teacher")
+    user_manager.create_a_user("Moh Khaldoun", "password123", "student")
+    user_manager.create_a_user("Moh Khaldoun", "password456", "teacher")
     users_found = user_manager.find_users([1])
     assert len(users_found) == 1
-    assert users_found[0].name == "John Doe"
+    assert users_found[0].name == "Moh Khaldoun"
 
 # Use mocker to mock the User class
 def test_mock_user(mocker, user_manager):
